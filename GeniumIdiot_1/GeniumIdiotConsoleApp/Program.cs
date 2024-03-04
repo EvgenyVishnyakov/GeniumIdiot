@@ -58,6 +58,8 @@ namespace GeniumIdiotConsoleApp
 
 
             Random random = new Random();
+            
+            
             string confirmOfProlongation = "да";
             while (confirmOfProlongation == "да")
             {
@@ -65,15 +67,12 @@ namespace GeniumIdiotConsoleApp
                 for (int i = 0; i < countQuestions; i++)
                 {
                     Console.WriteLine("Вопрос №" + (i + 1));
-                    int randomQuestionIndex = random.Next(countQuestions - i - 1);
-                    if (randomQuestionIndex != i + 1)
-                    {
-                        randomQuestionIndex = countQuestions - i - 1;
-                    }
-                    else
+                    int randomQuestionIndex = random.Next(i + 1);
+                    int tmp = randomQuestionIndex;
+                    if (randomQuestionIndex != i+1)
                     {
                         randomQuestionIndex = i;
-                    }
+                    }                  
 
                     Console.WriteLine(questions[randomQuestionIndex]);
 
